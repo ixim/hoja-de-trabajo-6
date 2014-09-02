@@ -1,4 +1,9 @@
+/*-----------------------------------------------------------------------------
+Universidad del Valle de Guatemala
+Ixim Cojti carné: 12697
+Luis Tello carne:13161
 
+-----------------------------------------------------------------------------*/
 package Principal;
 
 import java.util.*;
@@ -15,14 +20,14 @@ public class java
         
         SetFactory<String> sFactory = new SetFactory<String>();
         
-        //Set<String> conjuntoJava = new HashSet<String>();
-        //Set<String> conjuntoWeb = new HashSet<String>();
-        //Set<String> conjuntoCel = new HashSet<String>();
+        Set<String> desarrolladorJava = new HashSet<String>();
+        Set<String> desarrolladorWeb = new HashSet<String>();
+        Set<String> desarrolladorCel = new HashSet<String>();
         
         //paso la implementacion que utilizara cada objeto
-        Set<String> desarrolladorJava = sFactory.getSet(a);
-        Set<String> desarrolladorWeb = sFactory.getSet(a);
-        Set<String> desarrolladorCel = sFactory.getSet(a);
+        desarrolladorJava = sFactory.getSet(a);
+        desarrolladorWeb = sFactory.getSet(a);
+        desarrolladorCel = sFactory.getSet(a);
         
         do
         {
@@ -166,25 +171,54 @@ public class java
         //--------------------------------------------------------------------------------------------------
         System.out.println("6. El conjunto de desarrolladores con mayor numero de datos es:");
         if (cantMayor==1)//si cantidad de desarrolladores de java es mayor
-            System.out.println("Datos totales: "+cantJava);
+            System.out.println("Desarrolladores Java con Datos totales: "+cantJava);
             for (String nombre : desarrolladorJava)//que este en cel
             {
                 System.out.println(nombre);
             }
         if (cantMayor==2)//si cantidad de desarrolladores web es mayor 
-            System.out.println("Datos totales: "+cantWeb);
+            System.out.println("Desarrolladores Java con Datos totales: "+cantWeb);
             for (String nombre : desarrolladorWeb)//que este en cel
             {
                 System.out.println(nombre);
             }
         if (cantMayor==3)//si cantidad de desarrolladores de celular es mayor
-            System.out.println("Datos totales: "+cantCel);
+            System.out.println("Desarrolladores Java con Datos totales: "+cantCel);
             for (String nombre : desarrolladorCel)//que este en cel
             {
                 System.out.println(nombre);
             }
         //--------------------------------------------------------------------------------------------------
-        System.out.println("7. El conjunto de desarrolladores con mayor numero de datos es:");
-        
+        System.out.println("7. El conjunto de desarrolladores con mayor numero de datos ordenados es:");
+
+        if (cantMayor==1)//si cantidad de desarrolladores de java es mayor
+            System.out.println("El conjunto es Java");
+            Object[] javaArray1 = desarrolladorJava.toArray();
+            
+            Arrays.sort(javaArray1);
+            
+            for(Object s : javaArray1)
+                System.out.print(s + " ");                              
+            System.out.print("\n");
+ 
+        if (cantMayor==2)//si cantidad de desarrolladores web es mayor 
+            System.out.println("El conjunto es WEB");
+            Object[] javaArray2 = desarrolladorWeb.toArray();
+            
+            Arrays.sort(javaArray2);
+            
+            for(Object s : javaArray2)
+                System.out.print(s + " "); 
+            System.out.print("\n");
+        if (cantMayor==3)//si cantidad de desarrolladores celular es mayor 
+            System.out.println("El conjunto es WEB");
+            Object[] javaArray3 = desarrolladorWeb.toArray();
+            
+            Arrays.sort(javaArray3);
+            
+            for(Object s : javaArray3)
+                System.out.print(s + " "); 
+            System.out.print("\n");  
+          
     }    
 }
